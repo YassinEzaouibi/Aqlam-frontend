@@ -6,6 +6,8 @@ import {AdminInfoComponent} from "./components/admins/admin-info/admin-info.comp
 import {AddAdminComponent} from "./components/admins/add-admin/add-admin.component";
 import {UpdateAdminComponent} from "./components/admins/update-admin/update-admin.component";
 import {UsersComponent} from "./components/users/users.component";
+import {UserProfileComponent} from "./components/users/user-profile/user-profile.component";
+import {CalendarComponent} from "./components/calendar/calendar.component";
 
 
 const routes: Routes = [
@@ -17,7 +19,9 @@ const routes: Routes = [
   { path: 'admins/update/:id', component: UpdateAdminComponent },
 
   { path: 'users', component: UsersComponent },
-  { path: 'admins/info/:id', component: UsersComponent },
+  { path: 'users/info/:id', component: UserProfileComponent },
+
+  { path: 'calendar', component: CalendarComponent },
 
   { path: '', component: MainComponent, pathMatch: 'full' },
 ];

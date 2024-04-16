@@ -16,6 +16,8 @@ import {DatePipe} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import { UpdateAdminComponent } from './components/admins/update-admin/update-admin.component';
 import {UsersComponent} from "./components/users/users.component";
+import { UserProfileComponent } from './components/users/user-profile/user-profile.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import {UsersComponent} from "./components/users/users.component";
     AdminInfoComponent,
     AddAdminComponent,
     UpdateAdminComponent,
-    UsersComponent
+    UsersComponent,
+    UserProfileComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,

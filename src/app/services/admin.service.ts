@@ -53,4 +53,3 @@ export class AdminService {
     this.router.navigate(['/admins']);
   }
 }
-

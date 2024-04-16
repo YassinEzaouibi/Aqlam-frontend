@@ -1,6 +1,8 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {User} from "../models/user";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -8,29 +10,37 @@ import { Observable } from 'rxjs';
 export class UserService {
   private baseURL = 'http://localhost:8008/api/v1/user';
 
-  constructor(private httpClient: HttpClient) { }
-
-  getAllUsers(): Observable<any> {
-    return this.httpClient.get(`${this.baseURL}/all`);
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router
+  ) {
   }
 
-  getUserByUserName(userName: string): Observable<any> {
-    return this.httpClient.get(`${this.baseURL}/username`, { params: { userName: userName } });
+  getAllUsers(): Observable<User[]> {
+    return this.httpClient.get<User[]>(this.baseURL + '/all');
   }
 
-  getUserByEmail(email: string): Observable<any> {
-    return this.httpClient.get(`${this.baseURL}/email`, { params: { email: email } });
+  getUserByUserName(userName: string): Observable<User> {
+    return this.httpClient.get<User>(this.baseURL + '/username', {params: {userName: userName}});
   }
 
-  getUserById(id: number): Observable<any> {
-    return this.httpClient.get(`${this.baseURL}/${id}`);
+  getUserByEmail(email: string): Observable<User> {
+    return this.httpClient.get<User>(this.baseURL + '/email', {params: {email: email}});
   }
 
-  updateUser(id: number, user: any): Observable<any> {
-    return this.httpClient.put(`${this.baseURL}/update/${id}`, user);
+  getUserById(id: number): Observable<User> {
+    return this.httpClient.get<User>(this.baseURL + '/' + id);
   }
 
-  deleteUser(id: number): Observable<any> {
-    return this.httpClient.delete(`${this.baseURL}/delete/${id}`);
+  updateUser(id: number, user: any): Observable<User> {
+    return this.httpClient.put<User>(this.baseURL + '/update/' + id, user);
+  }
+
+  deleteUser(id: number): Observable<Object> {
+    return this.httpClient.delete(this.baseURL + '/delete/' + id);
+  }
+
+  public toUsersList() {
+    this.router.navigate(['/users']);
   }
 }
