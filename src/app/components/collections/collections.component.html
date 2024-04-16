@@ -1,0 +1,61 @@
+<div class="md:pl-64">
+  <div class="mx-auto flex max-w-4xl flex-col md:px-8 xl:px-0">
+    <main class="flex-1">
+      <div class="py-6">
+        <div class="justify-between flex items-center space-x-3   my-2">
+          <div>
+            <h1 class="text-2xl font-semibold text-gray-900">Collections</h1>
+          </div>
+        </div>
+
+        <div
+          *ngFor="let collection of collections"
+          class="mt-7 overflow-hidden rounded-lg bg-white shadow">
+          <div class="bg-white p-6">
+            <div class="sm:flex sm:items-center sm:justify-between">
+              <div class="sm:flex sm:space-x-5">
+                <div class="flex-shrink-0">
+                  <img class="mx-auto h-20 w-20 rounded-full"
+                       src="assets/book-square-svgrepo-com.svg"
+                       alt="">
+                </div>
+                <div class="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
+                  <p class="text-sm font-medium text-gray-600">{{ collection.title }},</p>
+                  <p class="text-sm  text-gray-900">{{ collection.description }}</p>
+                  <p class="text-sm text-gray-900 ">
+                     <span class="font-medium">
+                      User Id:
+                    </span>
+                    {{ collection.userId }}
+                  </p>
+                  <p class="text-sm text-gray-900 ">
+                    <span class="font-medium">
+                      Book Ids:
+                    </span>
+                    {{ collection.userId }}
+                  </p>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-1 divide-y divide-gray-200 border-t border-gray-200 bg-gray-50 sm:grid-cols-2 sm:divide-y-0 sm:divide-x">
+            <div class="px-6 py-5 text-center text-sm font-medium">
+              <p class="text-gray-900">{{ collection.bookIds.length }}</p>
+              <p class="text-gray-600">Numbers of Books</p>
+            </div>
+
+            <div class="px-6 py-5 text-center text-sm font-medium">
+              <p class="text-gray-900">{{ collection.userId }}</p>
+              <p class="text-gray-600">User Id</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </main>
+  </div>
+</div>

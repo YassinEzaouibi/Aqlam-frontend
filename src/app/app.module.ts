@@ -18,6 +18,10 @@ import { UpdateAdminComponent } from './components/admins/update-admin/update-ad
 import {UsersComponent} from "./components/users/users.component";
 import { UserProfileComponent } from './components/users/user-profile/user-profile.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { SupervisorsProfileComponent } from './components/users/supervisors-profile/supervisors-profile.component';
+import { SupervisorsUpdateComponent } from './components/users/supervisors-update/supervisors-update.component';
+import { BooksComponent } from './components/books/books.component';
+import { CollectionsComponent } from './components/collections/collections.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     UpdateAdminComponent,
     UsersComponent,
     UserProfileComponent,
-    CalendarComponent
+    CalendarComponent,
+    SupervisorsProfileComponent,
+    SupervisorsUpdateComponent,
+    BooksComponent,
+    CollectionsComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,10 @@ import {UpdateAdminComponent} from "./components/admins/update-admin/update-admi
 import {UsersComponent} from "./components/users/users.component";
 import {UserProfileComponent} from "./components/users/user-profile/user-profile.component";
 import {CalendarComponent} from "./components/calendar/calendar.component";
+import {SupervisorsProfileComponent} from "./components/users/supervisors-profile/supervisors-profile.component";
+import {SupervisorsUpdateComponent} from "./components/users/supervisors-update/supervisors-update.component";
+import {BooksComponent} from "./components/books/books.component";
+import {CollectionsComponent} from "./components/collections/collections.component";
 
 
 const routes: Routes = [
@@ -18,10 +22,17 @@ const routes: Routes = [
   { path: 'admins/info/:id', component: AdminInfoComponent },
   { path: 'admins/update/:id', component: UpdateAdminComponent },
 
+  { path: 'admins/profile/:id', component: SupervisorsProfileComponent },
+  { path: 'admins/update-supervisor/:id', component: SupervisorsUpdateComponent },
+
   { path: 'users', component: UsersComponent },
   { path: 'users/info/:id', component: UserProfileComponent },
 
   { path: 'calendar', component: CalendarComponent },
+
+  { path: 'books', component: BooksComponent },
+
+  { path: 'collection', component: CollectionsComponent },
 
   { path: '', component: MainComponent, pathMatch: 'full' },
 ];
